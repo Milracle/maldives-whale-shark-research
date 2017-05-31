@@ -58,6 +58,10 @@
 		3E56C2B650CE78E75CF9C916 /* Pods_MaldivesWhaleSharkResearchUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3813DF1825C1F3F972FDC2F /* Pods_MaldivesWhaleSharkResearchUITests.framework */; };
 		4B567D847252AC37A414B93F /* Pods_MaldivesWhaleSharkResearchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21708BB94A1E1599C3046E70 /* Pods_MaldivesWhaleSharkResearchTests.framework */; };
 		DBA7A76AD185789770831CC2 /* Pods_MaldivesWhaleSharkResearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05069E331F56640F8E911B8D /* Pods_MaldivesWhaleSharkResearch.framework */; };
+		EAAA46441EDEE64200B7D633 /* Annotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAA46401EDEE64200B7D633 /* Annotation.swift */; };
+		EAAA46451EDEE64200B7D633 /* Cluster.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAA46411EDEE64200B7D633 /* Cluster.swift */; };
+		EAAA46461EDEE64200B7D633 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAA46421EDEE64200B7D633 /* Extensions.swift */; };
+		EAAA46471EDEE64200B7D633 /* QuadTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAA46431EDEE64200B7D633 /* QuadTree.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,6 +141,10 @@
 		8DB22360E225F6EE928BBBDC /* Pods-MaldivesWhaleSharkResearchTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaldivesWhaleSharkResearchTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MaldivesWhaleSharkResearchTests/Pods-MaldivesWhaleSharkResearchTests.release.xcconfig"; sourceTree = "<group>"; };
 		B6C2CF165336D275509E38FB /* Pods-MaldivesWhaleSharkResearchUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaldivesWhaleSharkResearchUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MaldivesWhaleSharkResearchUITests/Pods-MaldivesWhaleSharkResearchUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C3813DF1825C1F3F972FDC2F /* Pods_MaldivesWhaleSharkResearchUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MaldivesWhaleSharkResearchUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EAAA46401EDEE64200B7D633 /* Annotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Annotation.swift; sourceTree = "<group>"; };
+		EAAA46411EDEE64200B7D633 /* Cluster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cluster.swift; sourceTree = "<group>"; };
+		EAAA46421EDEE64200B7D633 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		EAAA46431EDEE64200B7D633 /* QuadTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuadTree.swift; sourceTree = "<group>"; };
 		EB5842BBE278F730E30579EA /* Pods-MaldivesWhaleSharkResearchTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaldivesWhaleSharkResearchTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MaldivesWhaleSharkResearchTests/Pods-MaldivesWhaleSharkResearchTests.debug.xcconfig"; sourceTree = "<group>"; };
 		EE3C012FC0E5EF7D6D7639F1 /* Pods-MaldivesWhaleSharkResearchUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaldivesWhaleSharkResearchUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MaldivesWhaleSharkResearchUITests/Pods-MaldivesWhaleSharkResearchUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -301,6 +309,7 @@
 				042DBBD11EBE085900DA93B6 /* About */,
 				042776B31EB8B29A00D505C5 /* Models */,
 				04E19F171EDA7F5900E4BB22 /* Helpers */,
+				EAAA463E1EDEE64200B7D633 /* Library */,
 				04CEF2FE1EAB19550057A119 /* Assets.xcassets */,
 				04CEF3031EAB19550057A119 /* Info.plist */,
 				04CEF3251EAB198F0057A119 /* GoogleService-Info.plist */,
@@ -373,6 +382,25 @@
 				EE3C012FC0E5EF7D6D7639F1 /* Pods-MaldivesWhaleSharkResearchUITests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		EAAA463E1EDEE64200B7D633 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				EAAA463F1EDEE64200B7D633 /* Cluster */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		EAAA463F1EDEE64200B7D633 /* Cluster */ = {
+			isa = PBXGroup;
+			children = (
+				EAAA46401EDEE64200B7D633 /* Annotation.swift */,
+				EAAA46411EDEE64200B7D633 /* Cluster.swift */,
+				EAAA46421EDEE64200B7D633 /* Extensions.swift */,
+				EAAA46431EDEE64200B7D633 /* QuadTree.swift */,
+			);
+			path = Cluster;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -668,6 +696,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAAA46471EDEE64200B7D633 /* QuadTree.swift in Sources */,
 				042DBBD41EBE08AE00DA93B6 /* WeekViewController.swift in Sources */,
 				042776B71EB8B9FC00D505C5 /* Encounter.swift in Sources */,
 				042DBBF81EC1939600DA93B6 /* SharkImageCollectionViewCell.swift in Sources */,
@@ -680,6 +709,7 @@
 				042DBBF61EC1886600DA93B6 /* SharkProfileTableViewController.swift in Sources */,
 				042454251EBA0FCF009584B2 /* LoginCoordinator.swift in Sources */,
 				042DBBE11EBE9ED000DA93B6 /* CritterViewController.swift in Sources */,
+				EAAA46451EDEE64200B7D633 /* Cluster.swift in Sources */,
 				04E19F1B1EDBF6C600E4BB22 /* EncounterCollectionViewCell.swift in Sources */,
 				043C342E1EB44BA500D52BB8 /* TabBarViewController.swift in Sources */,
 				042DBBFC1EC1957400DA93B6 /* SharkFirstEncounterTableViewCell.swift in Sources */,
@@ -687,6 +717,8 @@
 				04A0D8A91EB882FE00B8EC63 /* SignInViewController.swift in Sources */,
 				043C34301EB46A1F00D52BB8 /* EncountersTableViewController.swift in Sources */,
 				042DBBFE1EC1958000DA93B6 /* SharkLastEncounterTableViewCell.swift in Sources */,
+				EAAA46461EDEE64200B7D633 /* Extensions.swift in Sources */,
+				EAAA46441EDEE64200B7D633 /* Annotation.swift in Sources */,
 				042776B51EB8B71100D505C5 /* WhaleShark.swift in Sources */,
 				04B95E9D1ED0987C00217DE4 /* Stats.swift in Sources */,
 				04CEF2FD1EAB19550057A119 /* MaldivesWhaleSharkResearch.xcdatamodeld in Sources */,

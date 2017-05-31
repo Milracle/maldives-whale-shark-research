@@ -8,7 +8,6 @@
 
 import UIKit
 import MapKit
-import Cluster
 import Firebase
 
 class MapViewController: UIViewController {
@@ -51,7 +50,8 @@ class MapViewController: UIViewController {
                 encounter.contributorImage = (restDict["contributor_image"] as? String)!
                 encounter.latitude = (restDict["northing"] as? String)!
                 encounter.longitude = (restDict["easting"] as? String)!
-                
+                encounter.sharkID = (restDict["shark_id"] as? String)!
+                                
                 let mediaDict = restDict["media"] as! [[String:Any]]
                 encounter.images = mediaDict.flatMap { $0["thumb_url"] as? String }
                 
@@ -84,6 +84,7 @@ class MapViewController: UIViewController {
             annotation.coordinate = CLLocationCoordinate2D(latitude: lat!, longitude: long!)
             let color = UIColor(red: 255/255, green: 149/255, blue: 0/255, alpha: 1)
             annotation.type = .color(color, radius: 25)
+            annotation.ID = encounter.sharkID
             return annotation
         }
         manager.add(annotations)
@@ -95,7 +96,7 @@ class MapViewController: UIViewController {
         if segue.identifier == "mapToEncounterSegue" {
             let destination = segue.destination as! EncounterDetailViewController
             // send data to selectedIndexPath?
-
+            destination.selectedEncounter = sender as! Encounter?
         }
     }
     
@@ -160,8 +161,15 @@ extension MapViewController: MKMapViewDelegate {
             manager.reload(mapView, visibleMapRect: zoomRect)
             mapView.setVisibleMapRect(zoomRect, animated: true)
         } else {
-            // pass the encounter data
-            // performSegue(withIdentifier: "mapToEncounterSegue", sender: self)
+            let annotate = annotation as! Annotation
+            if let sharkID = annotate.ID{
+                for encounter in self.encounters {
+                    if encounter.sharkID == sharkID{
+                        performSegue(withIdentifier: "mapToEncounterSegue", sender: encounter)
+                        break
+                    }
+                }
+            }
         }
     }
     
